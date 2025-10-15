@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Video Downloader By EllzXn</title>
+    <title>EllzXn Downloader</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container animate__animated animate__fadeIn">
+    <div class="container">
         <header>
-            <h1>TikTok Downloader</h1>
-            <p>Unduh video TikTok tanpa watermark dengan mudah.</p>
+            <h1>EllzXn Downloader</h1>
+            <p>Unduh video & media dari berbagai platform dengan mudah.</p>
         </header>
         <main>
+            <!-- Pilihan Jenis Downloader -->
+            <div class="downloader-choice">
+                <div class="choice-item">
+                    <input type="radio" id="type-tiktok" name="downloader-type" value="tiktok" checked>
+                    <label for="type-tiktok">TikTok</label>
+                </div>
+                <div class="choice-item">
+                    <input type="radio" id="type-allinone" name="downloader-type" value="allinone">
+                    <label for="type-allinone">All In One</label>
+                </div>
+            </div>
+
             <form id="download-form">
-                <input type="text" id="tiktok-url" placeholder="Tempel URL video TikTok di sini..." required>
+                <input type="text" id="media-url" placeholder="Tempel URL media di sini..." required>
                 <button type="submit" id="download-btn">Unduh</button>
             </form>
+
             <div id="status"></div>
-            <div id="result" class="hidden animate__animated animate__fadeIn">
-                <img id="video-thumbnail" src="" alt="Video Thumbnail">
-                <h3 id="video-title"></h3>
-                <div class="download-links">
-                    <a href="#" id="no-watermark" class="btn-download" download>Unduh (Tanpa Watermark)</a>
-                    <a href="#" id="no-watermark-hd" class="btn-download" download>Unduh (HD Tanpa Watermark)</a>
+
+            <div id="result" class="hidden">
+                <img id="media-thumbnail" src="" alt="Media Thumbnail">
+                <h3 id="media-title"></h3>
+                <!-- Container untuk link unduhan yang akan diisi oleh JS -->
+                <div id="download-links-container" class="download-links">
+                    <!-- Link unduhan akan ditambahkan di sini secara dinamis -->
                 </div>
             </div>
         </main>
@@ -37,5 +50,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-                                                                 </html>
-                                                                 
+</html>
